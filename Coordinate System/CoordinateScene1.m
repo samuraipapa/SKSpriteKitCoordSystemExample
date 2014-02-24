@@ -9,7 +9,7 @@
 #import "CoordinateScene1.h"
 
 SKLabelNode* labelSceen;
-SKLabelNode* labelTouchCoord;
+SKLabelNode* lableTouch;
 
 @implementation CoordinateScene1
 
@@ -31,15 +31,15 @@ SKLabelNode* labelTouchCoord;
                                    CGRectGetMaxY(self.frame)-40);
     [self addChild:labelSceen];
 
-    // labelTouchCoord Setup
-    SKLabelNode *labelTouchCoord = [SKLabelNode labelNodeWithFontNamed:@"TimesNewRoman"];
-
-    labelTouchCoord.text = @"Touch The Screen";
-    labelTouchCoord.fontColor = [SKColor yellowColor];
-    labelTouchCoord.fontSize = 20;
-    labelTouchCoord.position = CGPointMake(CGRectGetMidX(self.frame),
-                                      CGRectGetMidY(self.frame));
-    [self addChild:labelTouchCoord];
+    // lableTouch Setup
+    lableTouch = [SKLabelNode labelNodeWithFontNamed:@"TimesNewRoman"];
+    lableTouch.fontColor = [SKColor yellowColor];
+    lableTouch.text = @"Hello, World!";
+    lableTouch.fontSize = 18;
+    lableTouch.position = CGPointMake(CGRectGetMidX(self.frame),
+                                   CGRectGetMidY(self.frame));
+    
+    [self addChild:lableTouch];
 
     
     
@@ -57,28 +57,20 @@ SKLabelNode* labelTouchCoord;
     return self;
 }
 
--(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
-    NSLog(@"something moved");
-    
+-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    NSLog(@"touch began");
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    /* Called when a touch begins */
-
-    [labelTouchCoord setText:@"hello"];
-
-    
+-(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
     for (UITouch *touch in touches) {
         CGPoint location = [touch locationInNode:self];
-        
-        
-//        labelTouchCoord.text = [NSString stringWithFormat:@"x:%f, y:%f",location.x, location.y];
-//        NSLog(@"x:%f, y:%f",location.x, location.y);
-   
-        //    [self addChild:labelTouchCoord];
-        
-        }
+        lableTouch.position = location;
+        lableTouch.text = [NSString stringWithFormat:@"x: %1.0F, y: %1.0f",location.x, location.y ];
+        NSLog(@"x:%f, y:%f",location.x, location.y);
+    }
+    
 }
+
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
