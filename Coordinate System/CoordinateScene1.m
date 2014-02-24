@@ -18,16 +18,30 @@ SKLabelNode* labelTouchCoord;
 
 
 -(void) setUpScene{
+    
+    // set background color
     self.backgroundColor = [SKColor darkGrayColor];
+    
     
     // labelScreen Setup
     SKLabelNode *labelSceen = [SKLabelNode labelNodeWithFontNamed:@"TimesNewRoman"];
     labelSceen.text = @"CoordinateScene1";
-    labelSceen.fontSize = 20;
+    labelSceen.fontSize = 16;
     labelSceen.position = CGPointMake(CGRectGetMinX(self.frame)+ 85,
                                    CGRectGetMinY(self.frame));
     [self addChild:labelSceen];
 
+    // labelTouchCoord Setup
+    SKLabelNode *labelTouchCoord = [SKLabelNode labelNodeWithFontNamed:@"TimesNewRoman"];
+
+    labelTouchCoord.text = @"Touch The Screen";
+    labelTouchCoord.fontColor = [SKColor yellowColor];
+    labelTouchCoord.fontSize = 20;
+    labelTouchCoord.position = CGPointMake(CGRectGetMidX(self.frame),
+                                      CGRectGetMidY(self.frame));
+    [self addChild:labelTouchCoord];
+
+    
     
 }
 
@@ -48,6 +62,7 @@ SKLabelNode* labelTouchCoord;
     
     for (UITouch *touch in touches) {
         CGPoint location = [touch locationInNode:self];
+        
         
         }
 }
