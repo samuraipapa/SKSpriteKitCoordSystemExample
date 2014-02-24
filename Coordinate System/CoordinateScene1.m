@@ -27,8 +27,8 @@ SKLabelNode* labelTouchCoord;
     SKLabelNode *labelSceen = [SKLabelNode labelNodeWithFontNamed:@"TimesNewRoman"];
     labelSceen.text = @"CoordinateScene1";
     labelSceen.fontSize = 16;
-    labelSceen.position = CGPointMake(CGRectGetMinX(self.frame)+ 85,
-                                   CGRectGetMinY(self.frame));
+    labelSceen.position = CGPointMake(CGRectGetMidX(self.frame),
+                                   CGRectGetMaxY(self.frame)-40);
     [self addChild:labelSceen];
 
     // labelTouchCoord Setup

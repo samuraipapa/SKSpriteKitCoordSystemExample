@@ -22,10 +22,10 @@ SKLabelNode *myLabel;
     // mySceneLabel Setup
     mySceneLabel = [SKLabelNode labelNodeWithFontNamed:@"TimesNewRoman"];
     mySceneLabel.fontColor = [SKColor whiteColor];
-    mySceneLabel.text = @"CoordinateScene2World!";
+    mySceneLabel.text = @"CoordinateScene2!";
     mySceneLabel.fontSize = 18;
     mySceneLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-                                   CGRectGetMaxY(self.frame));
+                                   CGRectGetMaxY(self.frame)-40);
     
     [self addChild:mySceneLabel];
 
