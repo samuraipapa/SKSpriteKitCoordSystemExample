@@ -34,7 +34,7 @@ SKSpriteNode* squarePlaceHolder;
     // myLabel Setup
     myLabel = [SKLabelNode labelNodeWithFontNamed:@"TimesNewRoman"];
     myLabel.fontColor = [SKColor yellowColor];
-    myLabel.text = @"Hello, World!";
+    myLabel.text = @"Touch the Screen!";
     myLabel.fontSize = 18;
     myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
                                    CGRectGetMidY(self.frame));
@@ -73,10 +73,11 @@ SKSpriteNode* squarePlaceHolder;
     
     
     NSLog(@"%d items!", [array count]);
-    
+
+    float counter = 0;
+
     for (SKSpriteNode *gridLine in array)
     {
-        static float counter = 0;
         counter = counter + 50;
 
         gridLine.position = CGPointMake(CGRectGetMidX(self.frame),  counter);
@@ -116,15 +117,18 @@ SKSpriteNode* squarePlaceHolder;
     
     NSLog(@"%d items!", [array count]);
     
+    static float counter = 0;
+    
     for (SKSpriteNode *gridLine in array)
     {
-        static float counter = 0;
+       
         counter = counter + 50;
         
         gridLine.position = CGPointMake(counter, CGRectGetMidY(self.frame));
         [self addChild:gridLine];
         
     }
+    counter = 0;
     
 }
 
