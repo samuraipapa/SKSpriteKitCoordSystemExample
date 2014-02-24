@@ -9,8 +9,8 @@
 #import "CoordinateScene2.h"
 
 SKLabelNode *mySceneLabel;
-
 SKLabelNode *myLabel;
+
 
 @implementation CoordinateScene2
 
@@ -19,8 +19,19 @@ SKLabelNode *myLabel;
     
     self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
     
-    myLabel = [SKLabelNode labelNodeWithFontNamed:@"TimesNewRoman"];
+    // mySceneLabel Setup
+    mySceneLabel = [SKLabelNode labelNodeWithFontNamed:@"TimesNewRoman"];
+    mySceneLabel.fontColor = [SKColor whiteColor];
+    mySceneLabel.text = @"CoordinateScene2World!";
+    mySceneLabel.fontSize = 18;
+    mySceneLabel.position = CGPointMake(CGRectGetMidX(self.frame),
+                                   CGRectGetMaxY(self.frame));
     
+    [self addChild:mySceneLabel];
+
+    
+    // myLabel Setup
+    myLabel = [SKLabelNode labelNodeWithFontNamed:@"TimesNewRoman"];
     myLabel.fontColor = [SKColor yellowColor];
     myLabel.text = @"Hello, World!";
     myLabel.fontSize = 18;
