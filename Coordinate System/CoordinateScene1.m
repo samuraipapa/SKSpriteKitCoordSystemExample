@@ -57,6 +57,11 @@ SKLabelNode* labelTouchCoord;
     return self;
 }
 
+-(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+    NSLog(@"something moved");
+    
+}
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     /* Called when a touch begins */
 

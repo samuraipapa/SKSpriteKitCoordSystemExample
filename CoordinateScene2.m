@@ -63,6 +63,30 @@ SKLabelNode *myLabel;
     }
 }
 
+
+-(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event   {
+    for (UITouch *touch in touches) {
+        CGPoint location = [touch locationInNode:self];
+        
+        [myLabel setPosition:location];
+        [myLabel setText:[NSString stringWithFormat:@"x: %1.0f, y: %1.0f",location.x, location.y]];
+        
+    }
+    
+}
+
+-(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    for (UITouch *touch in touches) {
+        CGPoint location = [touch locationInNode:self];
+        
+        [myLabel setPosition:location];
+        [myLabel setText:[NSString stringWithFormat:@"x: %1.0f, y: %1.0f",location.x, location.y]];
+        
+    }
+}
+
+
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
 }
