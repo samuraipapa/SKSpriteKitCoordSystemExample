@@ -59,10 +59,18 @@ SKLabelNode* labelTouchCoord;
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     /* Called when a touch begins */
+
+    [labelTouchCoord setText:@"hello"];
+
     
     for (UITouch *touch in touches) {
         CGPoint location = [touch locationInNode:self];
         
+        
+//        labelTouchCoord.text = [NSString stringWithFormat:@"x:%f, y:%f",location.x, location.y];
+//        NSLog(@"x:%f, y:%f",location.x, location.y);
+   
+        //    [self addChild:labelTouchCoord];
         
         }
 }
