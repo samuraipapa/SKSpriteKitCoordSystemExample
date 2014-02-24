@@ -42,10 +42,19 @@ SKLabelNode *myLabel;
     
 }
 
+-(void) drawGridLines{
+    SKSpriteNode* gridX1 = [SKSpriteNode spriteNodeWithColor:[SKColor lightGrayColor] size:CGSizeMake(CGRectGetWidth(self.frame), 2.0)];
+    gridX1.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
+    
+    [self addChild:gridX1];
+    
+}
+
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
         [self sceneSetUp];
+        [self drawGridLines];
         
     }
     return self;
