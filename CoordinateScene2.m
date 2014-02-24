@@ -10,6 +10,7 @@
 
 SKLabelNode *mySceneLabel;
 SKLabelNode *myLabel;
+SKSpriteNode* squarePlaceHolder;
 
 
 @implementation CoordinateScene2
@@ -127,6 +128,13 @@ SKLabelNode *myLabel;
     
 }
 
+-(void) drawGridSquarePlaceHolder{
+    squarePlaceHolder = [SKSpriteNode spriteNodeWithColor:[SKColor orangeColor] size:CGSizeMake(10, 10)];
+    [self addChild:squarePlaceHolder];
+    
+                         
+}
+
 
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
@@ -134,6 +142,7 @@ SKLabelNode *myLabel;
         [self sceneSetUp];
         [self drawGridXLines];
         [self drawGridYLines];
+        [self drawGridSquarePlaceHolder];
         
     }
     return self;
@@ -147,7 +156,7 @@ SKLabelNode *myLabel;
 
         [myLabel setPosition:location];
         [myLabel setText:[NSString stringWithFormat:@"x: %1.0f, y: %1.0f",location.x, location.y]];
-        
+        [squarePlaceHolder setPosition:location];
     }
 }
 
@@ -158,6 +167,7 @@ SKLabelNode *myLabel;
         
         [myLabel setPosition:location];
         [myLabel setText:[NSString stringWithFormat:@"x: %1.0f, y: %1.0f",location.x, location.y]];
+        [squarePlaceHolder setPosition:location];
         
     }
     
@@ -170,6 +180,7 @@ SKLabelNode *myLabel;
         
         [myLabel setPosition:location];
         [myLabel setText:[NSString stringWithFormat:@"x: %1.0f, y: %1.0f",location.x, location.y]];
+        [squarePlaceHolder setPosition:location];
         
     }
 }
