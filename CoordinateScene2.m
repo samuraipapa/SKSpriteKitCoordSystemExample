@@ -42,19 +42,98 @@ SKLabelNode *myLabel;
     
 }
 
--(void) drawGridLines{
-    SKSpriteNode* gridX1 = [SKSpriteNode spriteNodeWithColor:[SKColor lightGrayColor] size:CGSizeMake(CGRectGetWidth(self.frame), 2.0)];
-    gridX1.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
+-(void) drawGridXLines{
     
-    [self addChild:gridX1];
+//    NSMutableArray *array = [NSMutableArray arrayWithObjects:[SKSpriteNode* person1],[SKSpriteNode* person2]] mutableCopy],;
+  
+    SKSpriteNode* gridx1 = [SKSpriteNode spriteNodeWithColor:[SKColor grayColor] size:CGSizeMake(CGRectGetWidth(self.frame), 1.0)];
+    SKSpriteNode* gridx2 = [SKSpriteNode spriteNodeWithColor:[SKColor grayColor] size:CGSizeMake(CGRectGetWidth(self.frame), 1.0)];
+    SKSpriteNode* gridx3 = [SKSpriteNode spriteNodeWithColor:[SKColor grayColor] size:CGSizeMake(CGRectGetWidth(self.frame), 1.0)];
+    SKSpriteNode* gridx4 = [SKSpriteNode spriteNodeWithColor:[SKColor grayColor] size:CGSizeMake(CGRectGetWidth(self.frame), 1.0)];
+    SKSpriteNode* gridx5 = [SKSpriteNode spriteNodeWithColor:[SKColor grayColor] size:CGSizeMake(CGRectGetWidth(self.frame), 1.0)];
+    SKSpriteNode* gridx6 = [SKSpriteNode spriteNodeWithColor:[SKColor grayColor] size:CGSizeMake(CGRectGetWidth(self.frame), 1.0)];
+    SKSpriteNode* gridx7 = [SKSpriteNode spriteNodeWithColor:[SKColor grayColor] size:CGSizeMake(CGRectGetWidth(self.frame), 1.0)];
+    SKSpriteNode* gridx8 = [SKSpriteNode spriteNodeWithColor:[SKColor grayColor] size:CGSizeMake(CGRectGetWidth(self.frame), 1.0)];
+    SKSpriteNode* gridx9 = [SKSpriteNode spriteNodeWithColor:[SKColor grayColor] size:CGSizeMake(CGRectGetWidth(self.frame), 1.0)];
+    SKSpriteNode* gridx10 = [SKSpriteNode spriteNodeWithColor:[SKColor grayColor] size:CGSizeMake(CGRectGetWidth(self.frame), 1.0)];
+   
+    
+    NSMutableArray* array= [NSMutableArray arrayWithObjects:gridx1,
+                                                            gridx2,
+                                                            gridx3,
+                                                            gridx4,
+                                                            gridx5,
+                                                            gridx6,
+                                                            gridx7,
+                                                            gridx8,
+                                                            gridx9,
+                                                            gridx10,
+                                                            nil];
+    
+    
+    NSLog(@"%d items!", [array count]);
+    
+    for (SKSpriteNode *gridLine in array)
+    {
+        static float counter = 0;
+        counter = counter + 50;
+
+        gridLine.position = CGPointMake(CGRectGetMidX(self.frame),  counter);
+        [self addChild:gridLine];
+        
+    }
+}
+
+-(void) drawGridYLines{
+    
+    //    NSMutableArray *array = [NSMutableArray arrayWithObjects:[SKSpriteNode* person1],[SKSpriteNode* person2]] mutableCopy],;
+    
+    SKSpriteNode* gridy1 = [SKSpriteNode spriteNodeWithColor:[SKColor grayColor] size:CGSizeMake(1 , CGRectGetMaxY(self.frame))];
+    SKSpriteNode* gridy2 = [SKSpriteNode spriteNodeWithColor:[SKColor grayColor] size:CGSizeMake(1 , CGRectGetMaxY(self.frame))];
+    SKSpriteNode* gridy3 = [SKSpriteNode spriteNodeWithColor:[SKColor grayColor] size:CGSizeMake(1 , CGRectGetMaxY(self.frame))];
+    SKSpriteNode* gridy4 = [SKSpriteNode spriteNodeWithColor:[SKColor grayColor] size:CGSizeMake(1 , CGRectGetMaxY(self.frame))];
+    SKSpriteNode* gridy5 = [SKSpriteNode spriteNodeWithColor:[SKColor grayColor] size:CGSizeMake(1 , CGRectGetMaxY(self.frame))];
+    SKSpriteNode* gridy6 = [SKSpriteNode spriteNodeWithColor:[SKColor grayColor] size:CGSizeMake(1 , CGRectGetMaxY(self.frame))];
+    SKSpriteNode* gridy7 = [SKSpriteNode spriteNodeWithColor:[SKColor grayColor] size:CGSizeMake(1 , CGRectGetMaxY(self.frame))];
+    SKSpriteNode* gridy8 = [SKSpriteNode spriteNodeWithColor:[SKColor grayColor] size:CGSizeMake(1 , CGRectGetMaxY(self.frame))];
+    SKSpriteNode* gridy9 = [SKSpriteNode spriteNodeWithColor:[SKColor grayColor] size:CGSizeMake(1 , CGRectGetMaxY(self.frame))];
+    SKSpriteNode* gridy10 = [SKSpriteNode spriteNodeWithColor:[SKColor grayColor] size:CGSizeMake(1 , CGRectGetMaxY(self.frame))];
+    
+    
+    NSMutableArray* array= [NSMutableArray arrayWithObjects:gridy1,
+                            gridy2,
+                            gridy3,
+                            gridy4,
+                            gridy5,
+                            gridy6,
+                            gridy7,
+                            gridy8,
+                            gridy9,
+                            gridy10,
+                            nil];
+    
+    
+    NSLog(@"%d items!", [array count]);
+    
+    for (SKSpriteNode *gridLine in array)
+    {
+        static float counter = 0;
+        counter = counter + 50;
+        
+        gridLine.position = CGPointMake(counter, CGRectGetMidY(self.frame));
+        [self addChild:gridLine];
+        
+    }
     
 }
+
 
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
         [self sceneSetUp];
-        [self drawGridLines];
+        [self drawGridXLines];
+        [self drawGridYLines];
         
     }
     return self;
