@@ -17,22 +17,29 @@ SKLabelNode* labelTouchCoord;
 
 
 
+-(void) setUpScene{
+    self.backgroundColor = [SKColor darkGrayColor];
+    
+    // labelScreen Setup
+    SKLabelNode *labelSceen = [SKLabelNode labelNodeWithFontNamed:@"TimesNewRoman"];
+    labelSceen.text = @"CoordinateScene1";
+    labelSceen.fontSize = 20;
+    labelSceen.position = CGPointMake(CGRectGetMinX(self.frame)+ 85,
+                                   CGRectGetMinY(self.frame));
+    [self addChild:labelSceen];
+
+    
+}
+
 
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
         
-        self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
+        [self setUpScene];
         
-        SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
         
-        myLabel.text = @"Hello, World!";
-        myLabel.fontSize = 30;
-        myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-                                       CGRectGetMidY(self.frame));
-        
-        [self addChild:myLabel];
-    }
+        }
     return self;
 }
 
