@@ -24,6 +24,9 @@
 		FC26553A18BB8730006441D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC26551518BB8730006441D5 /* UIKit.framework */; };
 		FC26554218BB8730006441D5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC26554018BB8730006441D5 /* InfoPlist.strings */; };
 		FC26554418BB8730006441D5 /* Coordinate_SystemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC26554318BB8730006441D5 /* Coordinate_SystemTests.m */; };
+		FC26555218BB87D8006441D5 /* CoordinateScene1.m in Sources */ = {isa = PBXBuildFile; fileRef = FC26555118BB87D8006441D5 /* CoordinateScene1.m */; };
+		FC26555518BB8807006441D5 /* CoordinateScene2.m in Sources */ = {isa = PBXBuildFile; fileRef = FC26555418BB8807006441D5 /* CoordinateScene2.m */; };
+		FC26555818BB8823006441D5 /* CoordinateScene3.m in Sources */ = {isa = PBXBuildFile; fileRef = FC26555718BB8823006441D5 /* CoordinateScene3.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,12 @@
 		FC26553F18BB8730006441D5 /* Coordinate SystemTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Coordinate SystemTests-Info.plist"; sourceTree = "<group>"; };
 		FC26554118BB8730006441D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FC26554318BB8730006441D5 /* Coordinate_SystemTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Coordinate_SystemTests.m; sourceTree = "<group>"; };
+		FC26555018BB87D8006441D5 /* CoordinateScene1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoordinateScene1.h; sourceTree = "<group>"; };
+		FC26555118BB87D8006441D5 /* CoordinateScene1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoordinateScene1.m; sourceTree = "<group>"; };
+		FC26555318BB8807006441D5 /* CoordinateScene2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoordinateScene2.h; path = ../CoordinateScene2.h; sourceTree = "<group>"; };
+		FC26555418BB8807006441D5 /* CoordinateScene2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoordinateScene2.m; path = ../CoordinateScene2.m; sourceTree = "<group>"; };
+		FC26555618BB8823006441D5 /* CoordinateScene3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoordinateScene3.h; path = ../CoordinateScene3.h; sourceTree = "<group>"; };
+		FC26555718BB8823006441D5 /* CoordinateScene3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoordinateScene3.m; path = ../CoordinateScene3.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +130,12 @@
 		FC26551918BB8730006441D5 /* Coordinate System */ = {
 			isa = PBXGroup;
 			children = (
+				FC26555618BB8823006441D5 /* CoordinateScene3.h */,
+				FC26555718BB8823006441D5 /* CoordinateScene3.m */,
+				FC26555318BB8807006441D5 /* CoordinateScene2.h */,
+				FC26555418BB8807006441D5 /* CoordinateScene2.m */,
+				FC26555018BB87D8006441D5 /* CoordinateScene1.h */,
+				FC26555118BB87D8006441D5 /* CoordinateScene1.m */,
 				FC26552218BB8730006441D5 /* AppDelegate.h */,
 				FC26552318BB8730006441D5 /* AppDelegate.m */,
 				FC26552518BB8730006441D5 /* Main.storyboard */,
@@ -262,10 +277,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC26555218BB87D8006441D5 /* CoordinateScene1.m in Sources */,
 				FC26552D18BB8730006441D5 /* MyScene.m in Sources */,
 				FC26552A18BB8730006441D5 /* ViewController.m in Sources */,
+				FC26555818BB8823006441D5 /* CoordinateScene3.m in Sources */,
 				FC26552418BB8730006441D5 /* AppDelegate.m in Sources */,
 				FC26552018BB8730006441D5 /* main.m in Sources */,
+				FC26555518BB8807006441D5 /* CoordinateScene2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

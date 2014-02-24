@@ -1,17 +1,20 @@
 //
-//  MyScene.m
+//  CoordinateScene1.m
 //  Coordinate System
 //
 //  Created by yg on 2/24/14.
 //  Copyright (c) 2014 YuryGitman. All rights reserved.
 //
 
-#import "MyScene.h"
+#import "CoordinateScene1.h"
 
-@implementation MyScene
+SKLabelNode* labelSceen;
+SKLabelNode* labelTouchCoord;
+
+@implementation CoordinateScene1
 
 
--(id)initWithSize:(CGSize)size {    
+-(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
         
@@ -35,16 +38,7 @@
     for (UITouch *touch in touches) {
         CGPoint location = [touch locationInNode:self];
         
-        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
-        
-        sprite.position = location;
-        
-        SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
-        
-        [sprite runAction:[SKAction repeatActionForever:action]];
-        
-        [self addChild:sprite];
-    }
+        }
 }
 
 -(void)update:(CFTimeInterval)currentTime {

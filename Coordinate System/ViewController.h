@@ -11,4 +11,8 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIStepper *stepperValue;
+
+- (IBAction)stepperPressed:(id)sender;
+
 @end
